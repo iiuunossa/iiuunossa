@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/issue', function () {
+/*Route::get('/issue', function () {
     return view('/issue/index');
 });
 
@@ -30,4 +30,10 @@ Route::get('/issue/edit', function () {
 
 Route::get('/issue/vote', function () {
     return view('issue/vote');
-});
+});*/
+
+Route::get('issue','IssuesController@index');
+Route::get('issue/create','IssuesController@create');
+Route::get('issue/{id}/edit','IssuesController@edit');
+Route::post('issue/','IssuesController@store');
+Route::post('issue{id}','IssuesController@update');
