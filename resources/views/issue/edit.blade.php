@@ -6,7 +6,7 @@
 <body> 
   
   <h1>Edit {{$issues->id}} Data.</h1> 
-  {!! Form::model($issues,['method' => 'PATCH', 'url' => 'issue' . $issues->id]) !!} 
+  {!! Form::model($issues,['method' => 'POST', 'url' => 'issue/' . $issues->id]) !!} 
  
     @include('issue._formedit') 
  
