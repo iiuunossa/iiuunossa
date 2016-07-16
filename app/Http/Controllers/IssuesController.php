@@ -17,10 +17,10 @@ class IssuesController extends Controller
      */
     public function index()
     {
-       //$issues = Issue::all(); 
-        $issues = Issue::orderBy('id','desc')->get();
-        return $issues;
-         //return view('issue.index', compact('issues'));
+       $issues = Issue::all(); 
+        //$issues = Issue::orderBy('id','desc')->get();
+       // return $issues;
+        return view('issue.index', compact('issues'));
     }
 
     /**
@@ -29,7 +29,7 @@ class IssuesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         return view('issue.create');
     }
 
@@ -39,12 +39,12 @@ class IssuesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        return Request::all();
-      /* $input = Request::all();
+       // return Request::all();
+       $input = Request::all();
         Issue::create($input);
-        return redirect('issue');*/
+        return redirect('issue');
     }
 
     /**
@@ -66,10 +66,8 @@ class IssuesController extends Controller
      */
     public function edit($id)
     {
-        $input = Request::all();
-         $issues = Issue::find($id);
-         $issues->update($input);
-         return redirect('issue/issues');
+        $issues = Issue::find($id);
+        return view('issue.edit',compact('issues'));
     }
 
     /**
@@ -79,9 +77,12 @@ class IssuesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+         $input = Request::all();
+         $issues = Issue::find($id);
+         $issues->update($input);
+         return redirect('issue');
     }
 
     /**

@@ -36,4 +36,4 @@ Route::get('issue','IssuesController@index');
 Route::get('issue/create','IssuesController@create');
 Route::get('issue/{id}/edit','IssuesController@edit');
 Route::post('issue/','IssuesController@store');
-Route::post('issue{id}','IssuesController@update');
+Route::post('issue/{id}','IssuesController@update');

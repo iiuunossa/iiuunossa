@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Issue extends Model
 {
-    protected $table = 'issue';
-    protected $fillable [
+    protected $table = 'issues';
+    protected $fillable =[
 			'requester',
             'service_type_id',
             'service_domain_id',
